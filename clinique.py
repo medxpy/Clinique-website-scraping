@@ -10,7 +10,7 @@ import time
 driver = webdriver.Chrome()
 
 # navigate to the URL
-driver.get("https://www.local.ch/en/",)
+driver.get("https://example.com/",)
 
 # Searching for "Clinic"
 def search_query(query):
@@ -40,7 +40,6 @@ def datasearch():
 
 # Get the phone_numbers elements
 def data_scrape():
-    # data = driver.find_element(By.CLASS_NAME, "col-xs-12.col-md-8")
     # Loop in data end extract phone numbers
     components = driver.find_elements(By.CSS_SELECTOR, ".js-entry-card-container.row.lui-margin-vertical-xs.lui-sm-margin-vertical-m")
     for component in components:
@@ -67,7 +66,7 @@ print(f"Total Pages: {total_pages}\n")
 
 # iterate over each page and extract data
 for page in range(2, int(total_pages)+1):
-    driver.get(f"https://www.local.ch/en/q?what=clinique&where=Switzerland&rid=E5ct&slot=tel&page={page}")
+    driver.get(f"https://www.exmple.com/&page={page}")
     time.sleep(3)
     source()
     datasearch()
